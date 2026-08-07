@@ -12,12 +12,6 @@ module.exports = {
         line: '#DEDFDA',
         cobalt: '#315BEA',
         night: '#111827',
-        success: '#16805B',
-        warning: '#B76E17',
-        danger: '#C74747',
-        sage: '#E8F0EB',
-        sand: '#F3EDE2',
-        lilac: '#EEEAF7',
       },
       fontFamily: {
         sans: ['var(--font-manrope)', 'sans-serif'],
@@ -25,7 +19,6 @@ module.exports = {
       },
       boxShadow: {
         card: '0 18px 60px rgba(17, 19, 21, 0.07)',
-        lift: '0 24px 80px rgba(17, 19, 21, 0.11)',
       },
     },
   },
