@@ -1,0 +1,5 @@
+import PageHero from './PageHero';
+
+export default function InfoPage({ eyebrow, title, copy, sections, cta }) {
+  return <main><PageHero eyebrow={eyebrow} title={title} copy={copy}/><section className="section shell"><div className="grid gap-5 md:grid-cols-2">{sections.map((section,index)=><article className={`card p-8 sm:p-10 ${index===0 ? 'md:col-span-2' : ''}`} key={section.title}><p className="eyebrow">{String(index+1).padStart(2,'0')}</p><h2 className="mt-7 font-display text-4xl sm:text-5xl">{section.title}</h2><p className="mt-5 max-w-2xl text-sm leading-7 text-zinc-600">{section.copy}</p>{section.items&&<ul className="mt-7 space-y-3 border-t pt-6 text-sm">{section.items.map(item=><li className="flex gap-3" key={item}><span className="text-cobalt">→</span>{item}</li>)}</ul>}</article>)}</div>{cta&&<div className="mt-16 rounded-3xl bg-cobalt p-10 text-white sm:p-16"><h2 className="font-display text-5xl sm:text-6xl">{cta.title}</h2><p className="mt-5 max-w-xl text-blue-100">{cta.copy}</p><a className="button-secondary mt-8" href={cta.href}>{cta.label} →</a></div>}</section></main>;
+}

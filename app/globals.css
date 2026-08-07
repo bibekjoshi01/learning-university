@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { @apply border-line; }
+  html { @apply scroll-smooth; }
+  body { @apply bg-paper font-sans text-ink antialiased; }
+  a, button, input, textarea { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2; }
+  h1, h2, h3, h4 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  ::selection { @apply bg-cobalt text-white; }
+}
+
+@layer components {
+  .shell { @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-10; }
+  .section { @apply py-20 sm:py-28 lg:py-32; }
+  .eyebrow { @apply text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500; }
+  .display { @apply font-display text-5xl font-normal leading-[0.94] tracking-[-0.04em] sm:text-7xl lg:text-[88px]; }
+  .button-primary { @apply inline-flex min-h-12 items-center justify-center gap-4 rounded-xl bg-cobalt px-6 text-sm font-bold text-white shadow-sm transition duration-200 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-lg active:translate-y-0; }
+  .button-secondary { @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-xl border bg-white px-6 text-sm font-bold text-ink shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-zinc-300 hover:shadow-card active:translate-y-0; }
+  .card { @apply rounded-2xl border bg-white shadow-[0_1px_2px_rgba(17,19,21,.03)]; }
+  .surface-grid { background-image: linear-gradient(#dedfda 1px,transparent 1px),linear-gradient(90deg,#dedfda 1px,transparent 1px); background-size: 32px 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+
+/* Tabflux certification monogram */
+.size-24.border-cobalt.font-display { font-size: 0; }
+.size-24.border-cobalt.font-display::after { content: 'T'; font-size: 3rem; }
