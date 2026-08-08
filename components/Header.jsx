@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, Bars2Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const links = [
   ['Schools', '/schools'],
@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <>
       <div className="bg-ink px-4 py-2.5 text-center text-[10px] font-semibold leading-5 text-zinc-300 sm:text-[11px]">
-        Admissions are open for the October cohort. <a className="ml-1 whitespace-nowrap text-white sm:ml-2" href="/schools">Explore Tracks →</a>
+        Admissions are open for the October cohort. <a className="ml-1 inline-flex items-center gap-1 whitespace-nowrap text-white sm:ml-2" href="/schools">Explore Tracks <ArrowRightIcon className="size-3"/></a>
       </div>
       <header className="sticky top-0 z-50 border-b bg-paper/90 backdrop-blur-xl">
         <div className="shell flex h-[76px] items-center">

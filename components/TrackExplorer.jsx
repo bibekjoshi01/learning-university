@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const tracks = [
   { school: 'AI Engineering', role: 'AI Product Engineer', copy: 'Build intelligent, production-ready products from idea to launch.', duration: '24 weeks', level: 'Beginner friendly', projects: '6 projects', category: 'AI', color: 'bg-blue-950 text-blue-200' },
@@ -29,7 +30,7 @@ export default function TrackExplorer() {
               <p className="mt-2 text-sm leading-6 text-zinc-400">{track.copy}</p>
               <div className="mt-6 flex flex-wrap gap-5 text-[11px] font-semibold text-zinc-500"><span>◷ {track.duration}</span><span>◇ {track.level}</span><span>▣ {track.projects}</span></div>
             </div>
-            <a href="#roadmap" className="ml-0 border-zinc-700 pt-5 lg:ml-6 lg:border-l lg:py-5 lg:pl-8"><span className="eyebrow !text-zinc-600">Career outcome</span><strong className="mt-2 block font-display text-2xl font-normal">{track.role}</strong><span className="mt-5 block text-xs font-bold text-blue-300">Explore track →</span></a>
+            <a href="#roadmap" className="ml-0 border-zinc-700 pt-5 lg:ml-6 lg:border-l lg:py-5 lg:pl-8"><span className="eyebrow !text-zinc-600">Career outcome</span><strong className="mt-2 block font-display text-2xl font-normal">{track.role}</strong><span className="mt-5 flex items-center gap-2 text-xs font-bold text-blue-300">Explore track <ArrowRightIcon className="size-4"/></span></a>
           </article>
         ))}
       </div>
