@@ -26,6 +26,12 @@
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
 
+@keyframes companyScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.company-marquee { overflow: hidden; mask-image: linear-gradient(to right,transparent,black 6%,black 94%,transparent); }
+.company-marquee-track { display: flex; width: max-content; gap: 4rem; animation: companyScroll 28s linear infinite; }
+.company-marquee:hover .company-marquee-track { animation-play-state: paused; }
+
 /* Tabflux certification monogram */
 .size-24.border-cobalt.font-display { font-size: 0; }
 .size-24.border-cobalt.font-display::after { content: 'T'; font-size: 3rem; }
@@ -38,4 +44,11 @@
   #roadmap .button-secondary { grid-column: 1 / -1; width: 100%; }
   #schools a.group { min-height: 360px; padding: 1.5rem; }
   #schools a.group h3 { font-size: 2.5rem; }
+  .card.p-8 { padding: 1.25rem; }
+  .card .p-8 { padding: 1.5rem; }
+  .bg-cobalt.p-9 { padding: 1.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .company-marquee-track { animation: none; }
 }

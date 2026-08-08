@@ -22,10 +22,10 @@ export default function Header() {
             <span className="grid size-9 place-items-center rounded-lg bg-cobalt font-display text-2xl italic text-white">T</span>
             Tabflux
           </a>
-          <nav className="ml-14 hidden items-center gap-9 text-[13px] font-semibold text-zinc-600 lg:flex">
+          <nav className="ml-14 hidden items-center gap-9 text-[15px] font-semibold text-zinc-600 lg:flex">
             {links.map(([label, href]) => <a className="transition hover:text-cobalt" href={href} key={label}>{label}</a>)}
           </nav>
-          <div className="ml-auto hidden items-center gap-7 text-[13px] font-semibold lg:flex">
+          <div className="ml-auto hidden items-center gap-7 text-[14px] font-semibold lg:flex">
             <a href="#">Sign in</a><a href="/schools" className="button-primary min-h-10 px-5">Explore Tracks</a>
           </div>
           <button onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle navigation" className="ml-auto grid size-11 place-items-center lg:hidden">
