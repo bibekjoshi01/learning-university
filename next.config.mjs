@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
+  poweredByHeader: false,
+  reactStrictMode: true,
   async redirects() {
     return [
       { source: '/roles/ai-agent-engineer', destination: '/roles/ai-integration-engineer', permanent: true },
