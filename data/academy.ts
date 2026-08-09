@@ -1,4 +1,6 @@
-export const schools = [
+import type { CareerRole, RoleGuidance, School, SkillCourse } from './types';
+
+export const schools: School[] = [
   {
     slug: "software-engineering-ai",
     index: "01",
@@ -13,13 +15,14 @@ export const schools = [
       "Engineering, data, infrastructure, AI systems, and technical product roles.",
     philosophy:
       "Learn engineering fundamentals in context, then apply them through increasingly complex production projects.",
-    tracks: [
+    roleSlugs: [
       "ai-backend-engineer",
       "ai-full-stack-engineer",
-      "ai-agent-engineer",
-      "machine-learning-engineer",
+      "ai-integration-engineer",
       "data-engineer",
       "devops-engineer",
+      "qa-test-automation-engineer",
+      "machine-learning-engineer",
     ],
   },
   {
@@ -36,7 +39,7 @@ export const schools = [
       "Automation, AI operations, functional AI, consulting, and transformation roles.",
     philosophy:
       "Start with business problems, map the workflow, and build reliable automation with measurable outcomes.",
-    tracks: [
+    roleSlugs: [
       "ai-automation-engineer",
       "business-automation-specialist",
       "ai-operations-specialist",
@@ -57,7 +60,7 @@ export const schools = [
       "AI-enabled knowledge work, freelancing, research, and accelerated career growth.",
     philosophy:
       "Build durable working habits around practical tasks, critical thinking, and responsible AI use.",
-    tracks: [
+    roleSlugs: [
       "ai-essentials",
       "ai-for-students",
       "ai-office-professional",
@@ -66,22 +69,22 @@ export const schools = [
   },
 ];
 
-export const tracks = [
+export const tracks: CareerRole[] = [
   {
     slug: "ai-backend-engineer",
-    school: "software-engineering-ai",
-    name: "AI Backend Engineer",
+    schoolSlug: "software-engineering-ai",
+    name: "Backend AI Engineer",
     summary:
-      "Design APIs, data systems, and reliable backends for intelligent products.",
+      "Build the fast, secure APIs and backend systems that power intelligent products.",
     duration: "24 weeks",
     difficulty: "Intermediate",
-    projects: 6,
-    roles: [
-      "AI Backend Engineer",
+    projectCount: 6,
+    outcomes: [
+      "Backend AI Engineer",
       "Backend Engineer",
       "AI Integration Engineer",
     ],
-    skills: [
+    courseSlugs: [
       "backend-foundations",
       "building-ai-apis",
       "production-ai-systems",
@@ -89,31 +92,31 @@ export const tracks = [
   },
   {
     slug: "ai-full-stack-engineer",
-    school: "software-engineering-ai",
-    name: "AI Full Stack Engineer",
+    schoolSlug: "software-engineering-ai",
+    name: "FullStack AI Engineer",
     summary:
-      "Build polished AI products across frontend, backend, and deployment.",
+      "Turn AI ideas into polished, production-ready products from interface to infrastructure.",
     duration: "28 weeks",
     difficulty: "Beginner to intermediate",
-    projects: 7,
-    roles: ["AI Full Stack Engineer", "Product Engineer", "Software Engineer"],
-    skills: [
+    projectCount: 7,
+    outcomes: ["FullStack AI Engineer", "AI Product Engineer", "Software Engineer"],
+    courseSlugs: [
       "product-engineering-foundations",
       "building-ai-apis",
       "production-ai-systems",
     ],
   },
   {
-    slug: "ai-agent-engineer",
-    school: "software-engineering-ai",
-    name: "AI Agent Engineer",
+    slug: "ai-integration-engineer",
+    schoolSlug: "software-engineering-ai",
+    name: "AI Integration Engineer",
     summary:
-      "Create dependable agentic systems that reason, use tools, and complete work.",
+      "Connect models, APIs, and business tools to make AI useful in real-world systems.",
     duration: "22 weeks",
     difficulty: "Intermediate",
-    projects: 6,
-    roles: ["AI Agent Engineer", "Applied AI Engineer", "AI Systems Engineer"],
-    skills: [
+    projectCount: 6,
+    outcomes: ["Applied AI Engineer", "AI Integration Engineer", "AI Solutions Engineer"],
+    courseSlugs: [
       "language-model-foundations",
       "agentic-workflows",
       "production-ai-systems",
@@ -121,19 +124,19 @@ export const tracks = [
   },
   {
     slug: "machine-learning-engineer",
-    school: "software-engineering-ai",
-    name: "Machine Learning Engineer",
+    schoolSlug: "software-engineering-ai",
+    name: "ML Engineer",
     summary:
-      "Develop and operate machine learning systems from data to production.",
+      "Transform data into dependable machine learning models that perform in production.",
     duration: "32 weeks",
     difficulty: "Advanced",
-    projects: 8,
-    roles: [
-      "Machine Learning Engineer",
+    projectCount: 8,
+    outcomes: [
+      "ML Engineer",
       "Applied ML Engineer",
       "MLOps Engineer",
     ],
-    skills: [
+    courseSlugs: [
       "data-foundations",
       "machine-learning-systems",
       "production-ai-systems",
@@ -141,43 +144,59 @@ export const tracks = [
   },
   {
     slug: "data-engineer",
-    school: "software-engineering-ai",
+    schoolSlug: "software-engineering-ai",
     name: "Data Engineer",
     summary:
-      "Build trusted data platforms that make analytics and AI possible.",
+      "Create reliable data pipelines and platforms that keep analytics and AI moving.",
     duration: "26 weeks",
     difficulty: "Intermediate",
-    projects: 6,
-    roles: ["Data Engineer", "Analytics Engineer", "Data Platform Engineer"],
-    skills: ["data-foundations", "data-pipelines", "cloud-data-systems"],
+    projectCount: 6,
+    outcomes: ["Data Engineer", "Analytics Engineer", "Data Platform Engineer"],
+    courseSlugs: ["data-foundations", "data-pipelines", "cloud-data-systems"],
   },
   {
     slug: "devops-engineer",
-    school: "software-engineering-ai",
-    name: "DevOps Engineer",
+    schoolSlug: "software-engineering-ai",
+    name: "DevOps/Cloud Engineer",
     summary:
-      "Automate software delivery and operate secure, resilient cloud systems.",
+      "Automate delivery and run secure, scalable cloud systems built to stay online.",
     duration: "24 weeks",
     difficulty: "Intermediate",
-    projects: 6,
-    roles: ["DevOps Engineer", "Platform Engineer", "Cloud Engineer"],
-    skills: ["systems-foundations", "delivery-automation", "cloud-operations"],
+    projectCount: 6,
+    outcomes: ["DevOps/Cloud Engineer", "Platform Engineer", "Cloud Engineer"],
+    courseSlugs: ["systems-foundations", "delivery-automation", "cloud-operations"],
+  },
+  {
+    slug: "qa-test-automation-engineer",
+    schoolSlug: "software-engineering-ai",
+    name: "QA / Test Automation Engineer",
+    summary:
+      "Catch problems early with smart testing and automation that keeps every release reliable.",
+    duration: "20 weeks",
+    difficulty: "Beginner to intermediate",
+    projectCount: 5,
+    outcomes: ["QA / Test Automation Engineer", "Quality Engineer", "SDET"],
+    courseSlugs: [
+      "testing-foundations",
+      "test-automation",
+      "quality-engineering",
+    ],
   },
   {
     slug: "ai-automation-engineer",
-    school: "business-ai-automation",
+    schoolSlug: "business-ai-automation",
     name: "AI Automation Engineer",
     summary:
       "Design AI-powered workflows that transform how modern teams operate.",
     duration: "16 weeks",
     difficulty: "Beginner friendly",
-    projects: 5,
-    roles: [
+    projectCount: 5,
+    outcomes: [
       "AI Automation Engineer",
       "Automation Consultant",
       "Solutions Specialist",
     ],
-    skills: [
+    courseSlugs: [
       "automation-foundations",
       "agentic-workflows",
       "automation-operations",
@@ -185,18 +204,18 @@ export const tracks = [
   },
   {
     slug: "business-automation-specialist",
-    school: "business-ai-automation",
+    schoolSlug: "business-ai-automation",
     name: "Business Automation Specialist",
     summary: "Map, redesign, and automate high-value business processes.",
     duration: "14 weeks",
     difficulty: "Beginner friendly",
-    projects: 4,
-    roles: [
+    projectCount: 4,
+    outcomes: [
       "Business Automation Specialist",
       "Process Analyst",
       "Automation Consultant",
     ],
-    skills: [
+    courseSlugs: [
       "automation-foundations",
       "workflow-design",
       "automation-operations",
@@ -204,34 +223,34 @@ export const tracks = [
   },
   {
     slug: "ai-operations-specialist",
-    school: "business-ai-automation",
+    schoolSlug: "business-ai-automation",
     name: "AI Operations Specialist",
     summary: "Implement, govern, and improve AI systems across business teams.",
     duration: "15 weeks",
     difficulty: "Beginner friendly",
-    projects: 4,
-    roles: [
+    projectCount: 4,
+    outcomes: [
       "AI Operations Specialist",
       "AI Program Coordinator",
       "Operations Analyst",
     ],
-    skills: ["ai-business-foundations", "workflow-design", "ai-governance"],
+    courseSlugs: ["ai-business-foundations", "workflow-design", "ai-governance"],
   },
   {
     slug: "no-code-ai-builder",
-    school: "business-ai-automation",
+    schoolSlug: "business-ai-automation",
     name: "No-Code AI Builder",
     summary:
       "Launch useful AI tools and internal products without traditional coding.",
     duration: "12 weeks",
     difficulty: "No-code friendly",
-    projects: 5,
-    roles: [
+    projectCount: 5,
+    outcomes: [
       "No-Code AI Builder",
       "Automation Builder",
       "AI Solutions Freelancer",
     ],
-    skills: [
+    courseSlugs: [
       "ai-business-foundations",
       "no-code-building",
       "automation-operations",
@@ -239,58 +258,58 @@ export const tracks = [
   },
   {
     slug: "ai-essentials",
-    school: "productivity",
+    schoolSlug: "productivity",
     name: "AI Essentials",
     summary:
       "Use AI confidently, critically, and responsibly in everyday work.",
     duration: "6 weeks",
     difficulty: "Beginner",
-    projects: 3,
-    roles: ["AI-Enabled Professional", "Knowledge Worker", "Team Contributor"],
-    skills: ["ai-literacy", "prompting-for-work", "responsible-ai-use"],
+    projectCount: 3,
+    outcomes: ["AI-Enabled Professional", "Knowledge Worker", "Team Contributor"],
+    courseSlugs: ["ai-literacy", "prompting-for-work", "responsible-ai-use"],
   },
   {
     slug: "ai-for-students",
-    school: "productivity",
+    schoolSlug: "productivity",
     name: "AI for Students",
     summary: "Research, learn, write, and prepare for the future with AI.",
     duration: "6 weeks",
     difficulty: "Beginner",
-    projects: 3,
-    roles: ["AI-Ready Graduate", "Research Assistant", "Student Creator"],
-    skills: ["ai-literacy", "ai-research-learning", "responsible-ai-use"],
+    projectCount: 3,
+    outcomes: ["AI-Ready Graduate", "Research Assistant", "Student Creator"],
+    courseSlugs: ["ai-literacy", "ai-research-learning", "responsible-ai-use"],
   },
   {
     slug: "ai-office-professional",
-    school: "productivity",
+    schoolSlug: "productivity",
     name: "AI Office Professional",
     summary:
       "Work faster and communicate better across modern office workflows.",
     duration: "8 weeks",
     difficulty: "Beginner",
-    projects: 4,
-    roles: [
+    projectCount: 4,
+    outcomes: [
       "AI Office Professional",
       "Executive Assistant",
       "Operations Coordinator",
     ],
-    skills: ["ai-literacy", "prompting-for-work", "office-automation"],
+    courseSlugs: ["ai-literacy", "prompting-for-work", "office-automation"],
   },
   {
     slug: "ai-career-accelerator",
-    school: "productivity",
+    schoolSlug: "productivity",
     name: "AI Career Accelerator",
     summary:
       "Build an AI-forward portfolio, professional presence, and job-search system.",
     duration: "8 weeks",
     difficulty: "Beginner",
-    projects: 4,
-    roles: ["Career Switcher", "AI-Enabled Professional", "Freelancer"],
-    skills: ["ai-literacy", "career-positioning", "portfolio-building"],
+    projectCount: 4,
+    outcomes: ["Career Switcher", "AI-Enabled Professional", "Freelancer"],
+    courseSlugs: ["ai-literacy", "career-positioning", "portfolio-building"],
   },
 ];
 
-export const skillCatalog = {
+const courseDefinitions: Record<string, readonly [string, string]> = {
   "backend-foundations": [
     "Backend Engineering Foundations",
     "Learn how modern services, databases, and APIs work together.",
@@ -342,6 +361,18 @@ export const skillCatalog = {
   "cloud-operations": [
     "Cloud Operations",
     "Operate secure and resilient production environments.",
+  ],
+  "testing-foundations": [
+    "Software Testing Foundations",
+    "Plan effective tests and evaluate software quality across the development lifecycle.",
+  ],
+  "test-automation": [
+    "Test Automation",
+    "Build maintainable automated tests for web applications, APIs, and services.",
+  ],
+  "quality-engineering": [
+    "Quality Engineering in Production",
+    "Integrate testing, observability, and quality controls into delivery workflows.",
   ],
   "automation-foundations": [
     "Automation Foundations",
@@ -397,7 +428,11 @@ export const skillCatalog = {
   ],
 };
 
-export const trackGuidance = {
+export const skillCourses: SkillCourse[] = Object.entries(courseDefinitions).map(
+  ([slug, [name, summary]]) => ({ slug, name, summary }),
+);
+
+export const trackGuidance: Record<string, RoleGuidance> = {
   'ai-backend-engineer': {
     prerequisites: ['Interest in building reliable technical systems','8–10 focused hours each week','A working laptop with a stable internet connection','Basic programming and command-line familiarity'],
     academics: ['Data Structures & Algorithms','Database Management Systems','Operating Systems','Computer Networks','Software Engineering'],
@@ -406,9 +441,9 @@ export const trackGuidance = {
     prerequisites: ['Curiosity about how complete digital products work','10–12 focused hours each week','A laptop capable of running modern development tools','Basic programming fundamentals are helpful'],
     academics: ['Web Technologies','Data Structures & Algorithms','Database Management Systems','Human–Computer Interaction','Software Engineering'],
   },
-  'ai-agent-engineer': {
+  'ai-integration-engineer': {
     prerequisites: ['Comfort with programming logic and APIs','10 focused hours each week','A working laptop and reliable internet','Patience for testing non-deterministic systems'],
-    academics: ['Artificial Intelligence','Natural Language Processing','Algorithms','Probability','Distributed Systems'],
+    academics: ['Artificial Intelligence','Software Engineering','Algorithms','Computer Networks','Distributed Systems'],
   },
   'machine-learning-engineer': {
     prerequisites: ['Programming fundamentals and comfort with data','12–15 focused hours each week','A laptop suitable for coding and data analysis','Willingness to practice mathematics consistently'],
@@ -421,6 +456,10 @@ export const trackGuidance = {
   'devops-engineer': {
     prerequisites: ['Basic command-line and programming familiarity','10 focused hours each week','A laptop that supports virtualization or containers','Interest in troubleshooting and system reliability'],
     academics: ['Operating Systems','Computer Networks','Distributed Systems','Information Security','Software Engineering'],
+  },
+  'qa-test-automation-engineer': {
+    prerequisites: ['Interest in software quality and systematic problem-solving','8–10 focused hours each week','A laptop capable of running development and browser tools','Basic programming fundamentals are helpful'],
+    academics: ['Software Engineering','Software Testing & Quality Assurance','Data Structures & Algorithms','Database Management Systems','Computer Networks'],
   },
   'ai-automation-engineer': {
     prerequisites: ['Interest in improving how businesses work','7–9 focused hours each week','A working laptop and stable internet','Logical thinking; prior coding is not required'],
@@ -455,9 +494,3 @@ export const trackGuidance = {
     academics: ['Professional Communication','Career Development','Project Management','Critical Thinking','Personal Branding'],
   },
 };
-
-export const getSchool = (slug) =>
-  schools.find((school) => school.slug === slug);
-export const getTrack = (slug) => tracks.find((track) => track.slug === slug);
-export const schoolTracks = (slug) =>
-  tracks.filter((track) => track.school === slug);

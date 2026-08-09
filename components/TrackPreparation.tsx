@@ -1,6 +1,7 @@
 import { CheckIcon, BookOpenIcon } from '@heroicons/react/24/outline';
+import type { RoleGuidance } from '@/data/types';
 
-export default function TrackPreparation({ roles, guidance }) {
+export default function TrackPreparation({ roles, guidance }: { roles: string[]; guidance: RoleGuidance }) {
   return <aside>
     <p className="eyebrow">Who this is for</p>
     <p className="mt-5 text-base leading-8 text-zinc-600">People who want a structured path into this work and prefer building practical evidence over collecting disconnected course certificates.</p>

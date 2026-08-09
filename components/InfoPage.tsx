@@ -1,6 +1,17 @@
 import PageHero from './PageHero';
 import { ArrowRightIcon, CheckIcon } from '@heroicons/react/24/outline';
+import type { ReactNode } from 'react';
 
-export default function InfoPage({ eyebrow, title, copy, sections, cta }) {
+interface InfoSection { title: string; copy: string; items?: string[] }
+interface InfoCta { title: string; copy: string; href: string; label: string }
+interface InfoPageProps {
+  eyebrow: string;
+  title: ReactNode;
+  copy: string;
+  sections: InfoSection[];
+  cta?: InfoCta;
+}
+
+export default function InfoPage({ eyebrow, title, copy, sections, cta }: InfoPageProps) {
   return <main><PageHero eyebrow={eyebrow} title={title} copy={copy}/><section className="section shell"><div className="grid gap-5 md:grid-cols-2">{sections.map((section,index)=><article className={`card p-8 sm:p-10 ${index===0 ? 'md:col-span-2' : ''}`} key={section.title}><p className="eyebrow">{String(index+1).padStart(2,'0')}</p><h2 className="mt-7 font-display text-4xl sm:text-5xl">{section.title}</h2><p className="mt-5 max-w-2xl text-sm leading-7 text-zinc-600">{section.copy}</p>{section.items&&<ul className="mt-7 space-y-3 border-t pt-6 text-sm">{section.items.map(item=><li className="flex gap-3" key={item}><CheckIcon className="mt-0.5 size-4 shrink-0 text-cobalt"/>{item}</li>)}</ul>}</article>)}</div>{cta&&<div className="mt-16 rounded-3xl bg-cobalt p-10 text-white sm:p-16"><h2 className="font-display text-5xl sm:text-6xl">{cta.title}</h2><p className="mt-5 max-w-xl text-blue-100">{cta.copy}</p><a className="button-secondary mt-8" href={cta.href}>{cta.label}<ArrowRightIcon className="size-4"/></a></div>}</section></main>;
 }

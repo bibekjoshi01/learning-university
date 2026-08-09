@@ -4,10 +4,12 @@ import TrackCard from '@/components/TrackCard';
 import { getSchool, schoolTracks, schools } from '@/lib/academy';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
-export function generateStaticParams(){return schools.map(s=>({slug:s.slug}))}
-export function generateMetadata({params}){const school=getSchool(params.slug);return {title:school?`${school.name} — Tabflux`:'School'}}
+interface SchoolPageProps { params: { slug: string } }
 
-export default function SchoolPage({params}) {
+export function generateStaticParams(){return schools.map(s=>({slug:s.slug}))}
+export function generateMetadata({params}: SchoolPageProps){const school=getSchool(params.slug);return {title:school?`${school.name} — Tabflux`:'School'}}
+
+export default function SchoolPage({params}: SchoolPageProps) {
   const school=getSchool(params.slug);
   if(!school) notFound();
   const trackList=schoolTracks(school.slug);

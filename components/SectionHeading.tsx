@@ -1,4 +1,14 @@
-export default function SectionHeading({ number, label, title, copy, light = false }) {
+import type { ReactNode } from 'react';
+
+interface SectionHeadingProps {
+  number: string;
+  label: string;
+  title: ReactNode;
+  copy: string;
+  light?: boolean;
+}
+
+export default function SectionHeading({ number, label, title, copy, light = false }: SectionHeadingProps) {
   return (
     <div className="grid gap-10 lg:grid-cols-[1.35fr_.65fr] lg:items-end lg:gap-20">
       <div>

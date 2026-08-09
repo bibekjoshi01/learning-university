@@ -2,6 +2,7 @@ import { Manrope, Newsreader } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import SiteFooter from '@/components/SiteFooter';
+import type { ReactNode } from 'react';
 
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope', display: 'swap' });
 const newsreader = Newsreader({ subsets: ['latin'], variable: '--font-newsreader', display: 'swap' });
@@ -11,7 +12,7 @@ export const metadata = {
   description: 'A modern career university for the age of AI.',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${manrope.variable} ${newsreader.variable}`}>
       <body><Header />{children}<SiteFooter /></body>
