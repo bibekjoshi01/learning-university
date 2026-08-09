@@ -1,3 +1,70 @@
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
-export const metadata={title:'Contact — Tabflux'};
-export default function Contact(){return <main><section className="section shell"><div className="grid gap-16 lg:grid-cols-[.8fr_1.2fr]"><div><p className="eyebrow">Academy / Contact</p><h1 className="mt-8 font-display text-7xl leading-[.92] tracking-[-.04em] sm:text-8xl">Let’s find your direction.</h1><p className="mt-7 max-w-lg text-lg leading-8 text-zinc-600">Tell us the kind of work you want to do. An academy advisor will help you identify the right School and Career Track.</p><div className="mt-10 space-y-2 text-sm"><p><strong>Email</strong> · hello@northstar.academy</p><p><strong>Location</strong> · Kathmandu, Nepal</p></div></div><form className="card p-8 sm:p-10"><div className="grid gap-6 sm:grid-cols-2"><label className="text-xs font-bold">First name<input className="mt-2 w-full rounded-lg border bg-paper px-4 py-3.5 font-normal outline-none focus:border-cobalt" name="firstName"/></label><label className="text-xs font-bold">Last name<input className="mt-2 w-full rounded-lg border bg-paper px-4 py-3.5 font-normal outline-none focus:border-cobalt" name="lastName"/></label><label className="text-xs font-bold sm:col-span-2">Email address<input type="email" className="mt-2 w-full rounded-lg border bg-paper px-4 py-3.5 font-normal outline-none focus:border-cobalt" name="email"/></label><label className="text-xs font-bold sm:col-span-2">What career are you considering?<textarea className="mt-2 min-h-32 w-full resize-y rounded-lg border bg-paper px-4 py-3.5 font-normal outline-none focus:border-cobalt" name="message"/></label></div><button className="button-primary mt-7" type="submit">Talk with an advisor <ArrowRightIcon className="size-4"/></button></form></div></section></main>}
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+export const metadata = { title: "Contact — Tabflux" };
+
+export default function Contact() {
+  return (
+    <main>
+      <section className="section shell">
+        <div className="grid gap-16 lg:grid-cols-[.8fr_1.2fr]">
+          <div>
+            <p className="eyebrow">Academy / Contact</p>
+            <h1 className="mt-8 font-display text-7xl leading-[.92] tracking-[-.04em] sm:text-8xl">
+              Let’s find your direction.
+            </h1>
+            <p className="mt-7 max-w-lg text-lg leading-8 text-zinc-600">
+              Tell us the kind of work you want to do. An academy advisor will
+              help you identify the right School and Career Track.
+            </p>
+            <div className="mt-10 space-y-2 text-sm">
+              <p>
+                <strong>Email</strong> · contact.tabflux@gmail.com
+              </p>
+              <p>
+                <strong>Phone No</strong> · +977-9848224709
+              </p>
+              <p>
+                <strong>Location</strong> · Kathmandu, Nepal
+              </p>
+            </div>
+          </div>
+          <form className="card p-8 sm:p-10">
+            <div className="grid gap-6 sm:grid-cols-2">
+              <label className="text-xs font-bold">
+                First name
+                <input
+                  className="mt-2 w-full rounded-lg border bg-paper px-4 py-3.5 font-normal outline-none focus:border-cobalt"
+                  name="firstName"
+                />
+              </label>
+              <label className="text-xs font-bold">
+                Last name
+                <input
+                  className="mt-2 w-full rounded-lg border bg-paper px-4 py-3.5 font-normal outline-none focus:border-cobalt"
+                  name="lastName"
+                />
+              </label>
+              <label className="text-xs font-bold sm:col-span-2">
+                Email address
+                <input
+                  type="email"
+                  className="mt-2 w-full rounded-lg border bg-paper px-4 py-3.5 font-normal outline-none focus:border-cobalt"
+                  name="email"
+                />
+              </label>
+              <label className="text-xs font-bold sm:col-span-2">
+                What career are you considering?
+                <textarea
+                  className="mt-2 min-h-32 w-full resize-y rounded-lg border bg-paper px-4 py-3.5 font-normal outline-none focus:border-cobalt"
+                  name="message"
+                />
+              </label>
+            </div>
+            <button className="button-primary mt-7" type="submit">
+              Talk with an advisor <ArrowRightIcon className="size-4" />
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+  );
+}
