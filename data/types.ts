@@ -32,4 +32,7 @@ export interface SkillCourse {
   slug: string;
   name: string;
   summary: string;
+  duration: string;
+  learningOutcomes: string[];
+  syllabus: string[];
 }
